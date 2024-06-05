@@ -11,7 +11,7 @@ import tn.esprit.devops_project.repositories.ProductRepository;
 import tn.esprit.devops_project.repositories.StockRepository;
 
 import java.util.List;
-//hell
+//hel
 @Service
 @AllArgsConstructor
 @Slf4j
