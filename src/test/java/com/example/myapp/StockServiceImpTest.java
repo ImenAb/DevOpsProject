@@ -33,35 +33,5 @@ class StockServiceImplTest {
         Assertions.assertEquals(2, foundStocks.size());
         Assertions.assertTrue(foundStocks.contains(stock1));
         Assertions.assertTrue(foundStocks.contains(stock2));
-    }
-
-    // Implémentez une classe MockStockRepository pour simuler le comportement du repository
-    private static class MockStockRepository implements StockRepository {
-        private List<Stock> stocks = new ArrayList<>();
-
-        @Override
-        public <S extends Stock> S save(S entity) {
-            stocks.add(entity);
-            return entity;
-        }
-
-        @Override
-        public Optional<Stock> findById(Long aLong) {
-            return stocks.stream()
-                    .filter(stock -> stock.getId().equals(aLong))
-                    .findFirst();
-        }
-
-        @Override
-        public List<Stock> findAll() {
-            return stocks;
-        }
-
-        @Override
-        public List<Stock> findByNameContainingIgnoreCase(String name) {
-            return stocks.stream()
-                    .filter(stock -> stock.getName().toLowerCase().contains(name.toLowerCase()))
-                    .collect(Collectors.toList());
-        }
-    }
+    }  
 }
